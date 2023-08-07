@@ -17,7 +17,7 @@ class DirectoryView(APIView):
             openapi.Parameter(
                 "date",
                 openapi.IN_QUERY,
-                description="Дата начала действия справочника",
+                description="Дата начала действия справочника. Пример: 2021-01-01",
                 type=openapi.TYPE_STRING,
                 format="YYYY-MM-DD",
             ),
