@@ -1,4 +1,5 @@
 from django.core.exceptions import ObjectDoesNotExist
+from django.http import HttpResponse
 from django.utils import timezone
 
 from drf_yasg import openapi
@@ -16,7 +17,7 @@ class DirectoryView(APIView):
             openapi.Parameter(
                 "date",
                 openapi.IN_QUERY,
-                description="Дата начала действия",
+                description="Дата начала действия справочника",
                 type=openapi.TYPE_STRING,
                 format="YYYY-MM-DD",
             ),
@@ -161,3 +162,7 @@ class CheckElementView(APIView):
                 {"error": "Элемент не найден в указанной версии"},
                 status=status.HTTP_400_BAD_REQUEST,
             )
+
+
+def index(request):
+    return HttpResponse("<h1>Cервис терминологий</h1>")
