@@ -46,13 +46,7 @@ git clone https://github.com/iurinmikhail/medical_service.git
    python manage.py migrate
    ```
 
-8. Примените миграции:
-   
-   ```bash
-   python manage.py migrate
-   ```
-
-9. Запустите сервер:
+8. Запустите сервер:
    
    ```bash
    python manage.py runserver
