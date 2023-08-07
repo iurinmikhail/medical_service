@@ -14,6 +14,13 @@ class Directory(models.Model):
     description = models.TextField(verbose_name="Описание", blank=True, null=True)
 
     def get_latest_version(self):
+        """Получает последнюю версию справочника.
+        Возвращает последнюю версию справочника, дата начала действия которой позже
+        всех остальных версий данного справочника, но не позже текущей даты.
+
+        :return: Объект последней версии справочника или None, если версий нет
+        :rtype: Version or None
+        """
         try:
             latest_version = self.version_set.latest("start_date")
             return latest_version if latest_version else None
